@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI | CrowdFlower</title>
+
+    <link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <style type="text/css">
+      .banner {
+        position:relative;
+        background-color: #61b48f;
+        background-repeat: no-repeat;
+        background-size: auto 400px;
+        min-height: 400px;
+        margin-top:-20px;
+        text-align: center;
+      }
+      .banner h1, h2 {
+        margin-top:50px;
+      }
+      .banner h1, h2 {
+        color: white;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px #353D44;
+      }
+      .banner h2 {
+        font-weight: normal;
+        font-size:1.4em;
+      }
+      .banner .jumbotron {
+        background: none !important;
+      }
+      .banner .logo {
+        width: 50px;
+        height: 38px;
+        display: block;
+        position: absolute;
+        left: 50%;
+        margin-left: -25px;
+        top: 30px;
+        text-indent: -9999px;
+        background-size: 50px auto;
+        background-image: url("data:image/png;base64,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")
+      }
+      @media (min-width: 768px) {
+        .cog1 {
+          font-size: 10vw;
+        }
+        .cog2 {
+          font-size: 5vw;
+        }
+        .banner {
+          background-size: 125% auto;
+        }
+        .banner h2 {
+          font-size: 2em;
+        }
+        .banner .laptop {
+          width: 40%;
+          bottom:-25px;
+          margin-left:-20%;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .banner {
+          background-size: 110% auto;
+          min-height: 500px;
+        }
+        .banner h2 {
+          font-size: 3em;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .cog1 {
+          font-size: 8em;
+        }
+        .cog2 {
+          font-size: 4em;
+        }
+        .banner {
+          background-size: 110% auto;
+          min-height: 600px;
+        }
+        .banner .laptop {
+          width: 480px;
+          margin-left: -240px;
+        }
+      }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body data-person="{}">
+
+    <div class="banner">
+  <div class="container jumbotron">
+    <div class="row">
+      <a href="http://ai.crowdflower.com" class="logo">CrowdFlower</a>
+      <h2>Human In The Loop</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4 handle">
+        <div class="input-group input-group-lg">
+          <input type="text" name="input" class="form-control" />
+          <div class="input-group-addon"><i class="fa fa-info-circle"></i></div>
+        </div>
+        <div class="accuracy circle">
+          <strong></strong>
+          <span></span>
+        </div>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <div class="row main-wrapper">
+        <div class="col-lg-12">
+
+          <div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <ul class="list-inline" style="text-align:center">
+      <li><a href="#sample1">Sample 1</a></li>
+      <li><a href="#sample2">Sample 2</a></li>
+      <li><a href="#sample3">Sample 3</a></li>
+      <li><a href="#sample4">Sample 4</a></li>
+    </ul>
+    <h3>About</h3>
+    <p style="font-size:1.5em">
+      Blah blah blah
+    </p>
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js">
+</script>
+<script type="text/javascript">
+//Custom JS can go here:
+
+</script>
+
+        </div>
+      </div><!--/row-->
+
+      <footer>
+      </footer>
+
+    </div> <!-- /container -->
+  </body>
+</html>
